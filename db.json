@@ -143,18 +143,6 @@
       "basePrice": 40,
       "salePrice": 30,
       "imageUrl": "https://img.freepik.com/photos-gratuite/maillot-bain-fond-jaune-isole_1303-13545.jpg?w=1380&t=st=1697105745~exp=1697106345~hmac=ac0dbee6a124ac0f32e039be6d18b8df61a56e1294423f2765d1286da55c21da"
-    },
-    {
-      "title": "Camisa",
-      "description": "ddfdfd",
-      "basePrice": 10,
-      "salePrice": 20,
-      "imageUrl": "https://img.freepik.com/foto-gratis/sesion-fotos-al-aire-libre-primer-plano-blanco-camisa-casual-negocios_53876-119744.jpg?w=740&t=st=1697530477~exp=1697531077~hmac=4d6b971ae2c32b800ee8a39e414c62590ccc5234312ebc9d828daa3cd6e1a1da",
-      "categories": [
-        "chaussures",
-        "homme"
-      ],
-      "id": 13
     }
   ]
 }

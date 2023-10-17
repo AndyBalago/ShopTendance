@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addProducts, getProducts } from '../actions/product.action';
+import { useNavigate } from 'react-router-dom';
 
 
 const ProductForm = () => {
     const formRef = useRef();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleForm = async (e) => {
         e.preventDefault();
@@ -26,7 +28,7 @@ const ProductForm = () => {
 
         await dispatch(addProducts(productData));
         dispatch(getProducts());
-        form.reset();
+        navigate('/');
     };
 
     return (

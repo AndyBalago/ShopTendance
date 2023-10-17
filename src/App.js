@@ -4,25 +4,46 @@ import { useSelector } from 'react-redux';
 import Product from './components/Product';
 import { isEmpty } from './components/utils';
 import ProductForm from './components/ProductForm';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import EditProduct from './components/EditProduct';
+
 
 function App() {
-  const products = useSelector( (state) => state.productReducer);
+  const products = useSelector((state) => state.productReducer);
 
 
   return (
-    <div className="App">
-      <div className='content'>
-      <h1> Liste de produits</h1>
-        <div className='productsContainer'> 
-        {!isEmpty (products) && products.map((product, index) => (
-          <Product product={product} key={index}></Product>
-        ))}
-        </div>
-        <div className='formContainer'>
-          <ProductForm></ProductForm>
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={
+          <div className='content'>
+            <h1> Liste de produits</h1>
+            <Link to='/create' className='btnCreer'><button>Creer produit</button></Link>
+            <div className='productsContainer'>
+              {!isEmpty(products) && products.map((product, index) => (
+                <Product pa product={product} key={index}></Product>
+              ))}
+            </div>
+          </div>
+        }>
+        </Route>
+        <Route path='/create' element={
+          <div className='formContainer'>
+            <Link to='/' className='btnCreer'><h2>HOME</h2></Link>
+            <ProductForm></ProductForm>
+          </div>
+        }></Route>
+        <Route path='/edit/:id' element={
+          <div className='editContainer'>
+            <Link to='/' className='btnCreer'><h2>HOME</h2></Link>
+            <EditProduct></EditProduct>
+          </div>}>
+
+        </Route>
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
