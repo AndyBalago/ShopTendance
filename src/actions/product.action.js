@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const ADD_PRODUCTS = 'ADD_PRODUCTS';
+export const EDIT_PRODUCT = 'EDIT_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 
 
@@ -20,6 +21,17 @@ export const addProducts = (data) => {
         });
     };
 };
+
+export const editProduct = (data) => {
+    return (dispatch) => {
+        return axios
+        .put(`http://localhost:3000/products/${data.id}`, data)
+        .then((res) => {
+           dispatch({type: EDIT_PRODUCT, payload: data}) 
+        });
+    };
+};
+
 export const deleteProduct = (productId) => {
     return (dispatch) => {
         return axios

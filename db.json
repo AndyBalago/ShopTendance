@@ -16,13 +16,13 @@
       "id": 2,
       "title": "T-shirt Blanc Classique",
       "description": "Un t-shirt blanc basique pour toutes les occasions.",
+      "basePrice": 15,
+      "salePrice": 10,
+      "imageUrl": "https://img.freepik.com/photos-gratuite/t-shirt-blanc-bande-noire-haut_1340-42520.jpg?w=740&t=st=1697105173~exp=1697105773~hmac=bedfff8d9b7498a687441916f2fd27889c7d2cb721e27ca4174335f20b9f5539",
       "categories": [
         "Vêtements",
         "Homme"
-      ],
-      "basePrice": 15,
-      "salePrice": 10,
-      "imageUrl": "https://img.freepik.com/photos-gratuite/t-shirt-blanc-bande-noire-haut_1340-42520.jpg?w=740&t=st=1697105173~exp=1697105773~hmac=bedfff8d9b7498a687441916f2fd27889c7d2cb721e27ca4174335f20b9f5539"
+      ]
     },
     {
       "id": 3,
@@ -143,6 +143,18 @@
       "basePrice": 40,
       "salePrice": 30,
       "imageUrl": "https://img.freepik.com/photos-gratuite/maillot-bain-fond-jaune-isole_1303-13545.jpg?w=1380&t=st=1697105745~exp=1697106345~hmac=ac0dbee6a124ac0f32e039be6d18b8df61a56e1294423f2765d1286da55c21da"
+    },
+    {
+      "id": 13,
+      "title": "Camisa fea",
+      "description": "Camisa blanca",
+      "basePrice": 50,
+      "salePrice": 30,
+      "imageUrl": "https://img.freepik.com/foto-gratis/sesion-fotos-al-aire-libre-primer-plano-blanco-camisa-casual-negocios_53876-119744.jpg?w=740&t=st=1697530477~exp=1697531077~hmac=4d6b971ae2c32b800ee8a39e414c62590ccc5234312ebc9d828daa3cd6e1a1da",
+      "categories": [
+        "Vetements",
+        "Homme"
+      ]
     }
   ]
 }

@@ -6,7 +6,7 @@ import { isEmpty } from './components/utils';
 import ProductForm from './components/ProductForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import EditProduct from './components/EditProduct';
+
 
 
 function App() {
@@ -34,13 +34,6 @@ function App() {
             <ProductForm></ProductForm>
           </div>
         }></Route>
-        <Route path='/edit/:id' element={
-          <div className='editContainer'>
-            <Link to='/' className='btnCreer'><h2>HOME</h2></Link>
-            <EditProduct></EditProduct>
-          </div>}>
-
-        </Route>
 
       </Routes>
     </BrowserRouter>
