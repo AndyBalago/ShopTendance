@@ -6,6 +6,7 @@ import { isEmpty } from './components/utils';
 import ProductForm from './components/ProductForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import NavBar from './components/NavBar';
 
 
 
@@ -15,11 +16,17 @@ function App() {
 
   return (
     <BrowserRouter>
+    <NavBar>
+    
+    </NavBar>
       <Routes>
         <Route path='/' element={
           <div className='content'>
             <h1> Liste de produits</h1>
-            <Link to='/create' className='btnCreer'><button>Creer produit</button></Link>
+            <div className='contCreer'>
+            <Link to='/create' >
+              <button className='btnCreer'>Creer produit</button></Link>
+              </div>
             <div className='productsContainer'>
               {!isEmpty(products) && products.map((product, index) => (
                 <Product pa product={product} key={index}></Product>
@@ -30,7 +37,7 @@ function App() {
         </Route>
         <Route path='/create' element={
           <div className='formContainer'>
-            <Link to='/' className='btnCreer'><h2>HOME</h2></Link>
+            
             <ProductForm></ProductForm>
           </div>
         }></Route>

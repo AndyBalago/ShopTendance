@@ -28,7 +28,7 @@ const Product = ({ product }) => {
             basePrice: uubasePrice,
             salePrice: uusalePrice,
             imageUrl: uImgUrl,
-            categories: [uCate1,uCate2],
+            categories: [uCate1, uCate2],
         };
 
         dispatch(editProduct(productData));
@@ -44,46 +44,48 @@ const Product = ({ product }) => {
 
             {editToggle ? (
                 <form onSubmit={(e) => handleEdit(e)}>
-                    <input id='titreProduit' type='text' 
-                    defaultValue={product.title}
-                    onChange={(e) => setuTitle(e.target.value)}
+                    <input id='titreProduit' type='text'
+                        defaultValue={product.title}
+                        onChange={(e) => setuTitle(e.target.value)}
                     ></input>
                     <textarea id='descrip'
-                    defaultValue={product.description}
-                    onChange={(e) => setuDescr(e.target.value)}
+                        defaultValue={product.description}
+                        onChange={(e) => setuDescr(e.target.value)}
                     ></textarea>
-                    <input id='prixBase' type='number' 
-                    defaultValue={product.basePrice}
-                    onChange={(e) => setuPrixBase(e.target.value)}
+                    <input id='prixBase' type='number'
+                        defaultValue={product.basePrice}
+                        onChange={(e) => setuPrixBase(e.target.value)}
                     ></input>
-                    <input id='prixSolde' type='number' 
-                    defaultValue={product.salePrice}
-                    onChange={(e) => setuPrixSale(e.target.value)}
+                    <input id='prixSolde' type='number'
+                        defaultValue={product.salePrice}
+                        onChange={(e) => setuPrixSale(e.target.value)}
                     ></input>
-                    <input id='cate1Produit' type='text' 
-                    defaultValue={product.categories[0]}
-                    onChange={(e) => setuCatego1(e.target.value)}
+                    <input id='cate1Produit' type='text'
+                        defaultValue={product.categories[0]}
+                        onChange={(e) => setuCatego1(e.target.value)}
                     ></input>
-                    <input id='cate2Produit' type='text' 
-                    defaultValue={product.categories[1]}
-                    onChange={(e) => setuCatego2(e.target.value)}
+                    <input id='cate2Produit' type='text'
+                        defaultValue={product.categories[1]}
+                        onChange={(e) => setuCatego2(e.target.value)}
                     ></input>
-                    <input id='img' type='url' 
-                    defaultValue={product.imageUrl}
-                    onChange={(e) => setuImgUrl(e.target.value)}
+                    <input id='img' type='url'
+                        defaultValue={product.imageUrl}
+                        onChange={(e) => setuImgUrl(e.target.value)}
                     ></input>
                     <input id='boutton' type='submit' value="Valider modification" ></input>
                 </form>
             ) : (
-                <div>
-                    <div className='contTitle'>
+                <div className='productCard'>
+                    <figure>
+                        <img className='imgProduct' src={product.imageUrl} alt='...'></img>
+                    </figure>
+                    <div className='productBody'>
                         <h2 className='productTitle'>{product.title}</h2>
-                    </div >
-                    <img className='imgProduct' src={product.imageUrl} alt='...'></img>
-                    <p className='descrProduct'>{product.description}</p>
-                    <div className='prixCont'>
-                        <p className='prixBase'>{product.basePrice}€</p>
-                        <p className='prixReduc'>{product.salePrice}€</p>
+                        <p className='descrProduct'>{product.description}</p>
+                        <div className='prixCont'>
+                            <p className='prixBase'>{product.basePrice}€</p>
+                            <p className='prixReduc'>{product.salePrice}€</p>
+                        </div>
                     </div>
                 </div>
             )}
