@@ -8,7 +8,8 @@ import rootReducer from './reducers';
 import { getProducts } from './actions/product.action';
 
 
-const store = configureStore ({
+
+export const store = configureStore ({
   reducer: rootReducer,
   devTools: true,
 })

@@ -15,39 +15,43 @@ body {
   line-height: 1.6rem;
   background-color: #28666e;
   min-height: 100vh;
-  
+
 }
-.navBar{
-    height: 70px;
-    width: 100%;
-    background-color: #030404;
-    border: 1px solid transparent;
-    align-items: center;
-    display: flex;
-    padding-left: 3rem;
-    position: fixed;
+
+.navBar {
+  height: 70px;
+  width: 100%;
+  background-color: #030404;
+  border: 1px solid transparent;
+  align-items: center;
+  display: flex;
+  padding-left: 3rem;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
-    
+
 }
-.home{
-  color: aqua;
-  font-size: 50px;
+
+.navBar img {
+  height: 70px;
 }
-.home:hover{
+
+.home:hover {
   color: #fbf9f9;
 }
+
 h1 {
 
   text-align: center;
   margin-top: 100px;
-  font-family: "Bebas Neue" ;
+  font-family: "Bebas Neue";
   color: aliceblue;
   letter-spacing: .25rem;
 }
-.productCont{
+
+.productCont {
   --img-scale: 1.001;
   --title-color: black;
   --link-icon-translate: -20px;
@@ -59,23 +63,26 @@ h1 {
   transform-origin: center;
   transition: all 0.4s ease-in-out;
   overflow: hidden;
- 
-}
-.productCard h2{
-    margin: 0 0 18px 0;
-    font-family: "Bebas Neue", cursive;
-    font-size: 1.9rem;
-    letter-spacing: 0.06em;
-    color: var(--title-color);
-    transition: color 0.3s ease-out;
 
 }
+
+.productCard h2 {
+  margin: 0 0 18px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+
+}
+
 figure {
   margin: 0;
   padding: 0;
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
+
 figure img {
   max-width: 100%;
   transform-origin: center;
@@ -83,20 +90,21 @@ figure img {
   transition: transform 0.4s ease-in-out;
 }
 
-.productBody{
+.productBody {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  
+
 }
 
-.prixCont{
+.prixCont {
   display: flex;
   gap: .5rem;
   justify-content: end;
   padding-right: 1rem;
 }
-.prixBase{
+
+.prixBase {
   font-size: 15px;
   color: red;
   text-decoration: line-through;
@@ -110,7 +118,7 @@ figure img {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-.productsContainer{
+.productsContainer {
   display: grid;
   max-width: 100%;
   margin-inline: auto;
@@ -118,41 +126,49 @@ figure img {
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 24px;
 }
-.editDelete{
+
+.editDelete {
   padding: .5rem;
   display: flex;
   justify-content: end;
   gap: .5rem;
   padding-right: 1rem;
 }
-.delete{
+
+.delete {
   color: rgb(163, 0, 0);
   cursor: pointer;
 }
-.delete:hover{
+
+.delete:hover {
   color: rgb(185, 107, 107);
 }
-.edit{
+
+.edit {
   color: rgb(0, 95, 163);
   cursor: pointer;
 }
-.edit:hover{
+
+.edit:hover {
   color: rgb(80, 162, 221);
 }
-.contCreer{
+
+.contCreer {
   display: flex;
   justify-content: end;
   margin-right: 5rem;
   align-items: center;
   margin-bottom: 2rem;
 }
-.contCreer button{
+
+.contCreer button {
   background: white;
   border: solid 2px black;
   padding: .375em 1.125em;
   font-size: 1rem;
-  background-color:rgb(33, 32, 32);
+  background-color: rgb(33, 32, 32);
 }
+
 .btnCreer {
   font-size: 2rem;
   color: hsl(190deg, 10%, 95%);
@@ -168,11 +184,11 @@ figure img {
     border-top-left-radius var(--dur) var(--delay) ease-out,
     border-top-right-radius var(--dur) calc(var(--delay)) ease-out,
     border-bottom-right-radius var(--dur) calc(var(--delay)) ease-out,
-    border-bottom-left-radius var(--dur) calc(var(--delay) ) ease-out,
+    border-bottom-left-radius var(--dur) calc(var(--delay)) ease-out,
     box-shadow calc(var(--dur) * 4) ease-out,
     transform calc(var(--dur) * 4) ease-out,
-    
-    
+
+
 }
 
 .btnCreer:hover,
@@ -186,23 +202,28 @@ figure img {
   border-bottom-right-radius: var(--radius);
   cursor: pointer;
 }
-.formCont{
+
+/* -------------Form Creation----------- */
+
+.formCont {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
-.formCont h2{
+
+.formCont h2 {
   text-align: center;
   margin-top: 80px;
-  font-family: "Bebas Neue" ;
+  font-family: "Bebas Neue";
   color: aliceblue;
   letter-spacing: .25rem;
 }
-.formCont form{
+
+.formCont form {
   background-color: #15172b;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
+  height: 600px;
   padding: 20px;
   width: 500px;
 }
@@ -213,21 +234,17 @@ figure img {
   width: 100%;
 }
 
-.ic1 {
-  margin-top: 10px;
-}
-
+.ic1 ,
 .ic2,
 .ic3,
 .ic4,
 .ic5,
 .ic6,
-.ic7
- {
-  margin-top: 10px;
+.ic7 {
+  margin-top: 20px;
 }
 
-.input {
+.input{
   background-color: #303245;
   border-radius: 12px;
   border: 0;
@@ -240,10 +257,50 @@ figure img {
   width: 100%;
   font-family: 'Courier New';
 }
-.formCont textarea{
-  resize:none;
+
+.formCont textarea {
+  resize: none;
   font-family: 'Courier New';
 }
+
+
+
+.cut-short {
+  width: 100px;
+  display: none;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder {
+  color: #dc2f55;
+}
+
+
 .submit {
   background-color: #08d;
   border-radius: 12px;
@@ -253,7 +310,7 @@ figure img {
   cursor: pointer;
   font-size: 18px;
   height: 50px;
-  margin-top: 15px;
+  margin-top: 30px;
   outline: 0;
   text-align: center;
   width: 100%;
@@ -263,6 +320,68 @@ figure img {
   background-color: #06b;
 }
 
+/* -------------Form Edition----------- */
+
+.productCont form{
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  width: 90%;
+  padding-left: 10%;
+}
+.placeholderEdit{
+  font-size: 10px;
+  font-weight: 700;
+  
+}
+.inputCont{
+height: 50px;
+position: relative;
+width: 100%;
+
+}
+.inputEdit
+{
+  border-radius: 12px;
+  border: 1;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 50%;
+  outline: 0;
+  padding: 1px 10px 0;
+  width: 100%;
+  font-family: 'Courier New';
+}
+
+.incon2{
+  margin-bottom: 1rem;
+}
+.productCont textarea {
+  resize: none;
+  height: 3em;
+}
+
+.validerBtn {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 30px;
+  margin-top: 15px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.validerBtn:active {
+  background-color: #06b;
+}
 @media screen and (max-width: 960px) {
   .productCont {
     container: card/inline-size;

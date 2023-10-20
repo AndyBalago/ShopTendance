@@ -11,8 +11,7 @@ const Product = ({ product }) => {
     const [uPrixBase, setuPrixBase] = useState(product.basePrice);
     const [uPrixSale, setuPrixSale] = useState(product.salePrice);
     const [uImgUrl, setuImgUrl] = useState(product.imageUrl);
-    const [uCate1, setuCatego1] = useState(product.categories[1]);
-    const [uCate2, setuCatego2] = useState(product.categories[2]);
+    const [uCate, setuCatego] = useState(product.categories);
     const dispatch = useDispatch();
 
 
@@ -28,7 +27,7 @@ const Product = ({ product }) => {
             basePrice: uubasePrice,
             salePrice: uusalePrice,
             imageUrl: uImgUrl,
-            categories: [uCate1, uCate2],
+            categories: uCate,
         };
 
         dispatch(editProduct(productData));
@@ -44,35 +43,49 @@ const Product = ({ product }) => {
 
             {editToggle ? (
                 <form onSubmit={(e) => handleEdit(e)}>
-                    <input id='titreProduit' type='text'
+                    <div className='inputCont incon1'>
+                    <label for="titreProduit" class="placeholderEdit">Titre produit</label>
+                    <input className='inputEdit' id='titreProduit' type='text'
                         defaultValue={product.title}
                         onChange={(e) => setuTitle(e.target.value)}
                     ></input>
-                    <textarea id='descrip'
+                    </div>
+                    <div className='inputCont incon2'>
+                    <label for="descrip" class="placeholderEdit">Description du produit</label>
+                    <textarea className='inputEdit' id='descrip'
                         defaultValue={product.description}
                         onChange={(e) => setuDescr(e.target.value)}
                     ></textarea>
-                    <input id='prixBase' type='number'
+                    </div>
+                    <div className='inputCont incon3'>
+                    <label for="prixBase" class="placeholderEdit">Prix de base</label>
+                    <input className='inputEdit' id='prixBase' type='number'
                         defaultValue={product.basePrice}
                         onChange={(e) => setuPrixBase(e.target.value)}
                     ></input>
-                    <input id='prixSolde' type='number'
+                    </div>
+                    <div className='inputCont incon4'>
+                    <label for="prixSolde" class="placeholderEdit">Prix solde</label>
+                    <input className='inputEdit' id='prixSolde' type='number'
                         defaultValue={product.salePrice}
                         onChange={(e) => setuPrixSale(e.target.value)}
                     ></input>
-                    <input id='cate1Produit' type='text'
-                        defaultValue={product.categories[0]}
-                        onChange={(e) => setuCatego1(e.target.value)}
+                    </div>
+                    <div className='inputCont incon5'>
+                    <label for="cate1Produit" class="placeholderEdit">Categorie</label>
+                    <input className='inputEdit' id='cate1Produit' type='text'
+                        defaultValue={product.categories}
+                        onChange={(e) => setuCatego(e.target.value)}
                     ></input>
-                    <input id='cate2Produit' type='text'
-                        defaultValue={product.categories[1]}
-                        onChange={(e) => setuCatego2(e.target.value)}
-                    ></input>
-                    <input id='img' type='url'
+                    </div>
+                    <div className='inputCont incon7'>
+                    <label for="img" class="placeholderEdit">URL Image du produit</label>
+                    <input className='inputEdit' id='img' type='url'
                         defaultValue={product.imageUrl}
                         onChange={(e) => setuImgUrl(e.target.value)}
                     ></input>
-                    <input id='boutton' type='submit' value="Valider modification" ></input>
+                    </div>
+                    <input className="validerBtn" id='boutton' type='submit' value="Valider modification" ></input>
                 </form>
             ) : (
                 <div className='productCard'>
