@@ -1,58 +1,52 @@
 import React, { useState } from 'react'
 import LogoST from '../Img/LogoST.png'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from '../actions/product.action'
+import { useSelector } from 'react-redux'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 
 const NavBar = () => {
   const products = useSelector((state) => state.productReducer);
-  
-  const allCategories = ['All',...new Set(products.map(product => product.categories))];
-  // console.log(allCategories);
 
+  const allCategories = [...new Set(products.map(product => product.categories))];
 
- 
+  const [showNavBar, setShowNavBar] = useState(false);
+  const handleShowNavBar = () => {
+    setShowNavBar(!showNavBar)
+  };
 
-  // const filterCategory = (category) => {
-  //   if (category === 'All') {
-  //     getProducts(products);
-  //   }
-  //  const filterData = products.filter(product => product.categories == category);
-
-  //   console.log(filterData);
-  // }
-
-  
 
   return (
     <div className='navBar'>
-      <div className='title'>
-        <Link to='/'>
-          <img  src={LogoST} className='home' />
-        </Link>
-        </div>
-        <div className='categories'>
-          {allCategories.map((category, index) => {
-            return (
-              <div key={index} className='cate'>
-                <Link to={"/filteredProducts/" + category}>
-                  <button
-                    className='btnCategorie'
-                    type='button'
-                    // onClick={() => filterCategory(category)}
-                    key={category}
-
-                  >{category}
-                  </button>
-                </Link>
-              </div>
-
-            )
-          })}
-        </div>
+      <div className='contLogo'>
+        <NavLink to='/'>
+          <img src={LogoST} className='logo' />
+        </NavLink>
       </div>
+      <div className='menuResponsive'>
+        <AiOutlineMenu className='menu-icon' onClick={handleShowNavBar}/>
+      </div>
+      <div className={`categoriesBtns  ${showNavBar && 'active'}`} >
+        {allCategories.map((category, index) => {
+          return (
+            <div key={index} className='cate'>
+              <NavLink to={"/filteredProducts/" + category}>
+                <button
+                  className='btnCategorie'
+                  type='button'
+                  key={category}
+                >{category}
+                </button>
+              </NavLink>
+            </div>
+          )
+        })}
+      </div>
+      <div className='contCreer'>
+        <NavLink to='/create' ><button className='btnCreer'>Creer produit</button></NavLink>
+      </div>
+    </div>
   )
 }
 

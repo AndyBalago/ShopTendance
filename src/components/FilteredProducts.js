@@ -3,25 +3,20 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import Product from './Product';
 
-
-
 const FilteredProducts= ()=> {
 
 const products = useSelector((state) => state.productReducer);
 const {categorie} =useParams();
 
-console.log( categorie);
 
   return (
-    <div className='contFilter'>FilteredProducts
-        <div>
+    <div className='contFilter'>
             <h1 className='titreCategorie'>
             {categorie}
             </h1>
-        </div>
         <div className='contCardProducts'>
             {products
-            .filter((product) => product.categorie == categorie)
+            .filter((product) => product.categories == categorie)
             .map((product, index) => {
                 return(
                     <div key={index}>
@@ -29,7 +24,6 @@ console.log( categorie);
                    product={product} key={index}></Product>
                     </div>
                 )
-               
             })
             
             }

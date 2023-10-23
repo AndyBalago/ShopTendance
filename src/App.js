@@ -10,8 +10,6 @@ import NavBar from './components/NavBar';
 import FilteredProducts from './components/FilteredProducts';
 
 
-
-
 function App() {
   const products = useSelector((state) => state.productReducer);
 
@@ -19,7 +17,6 @@ function App() {
   return <div>Loading...</div>
  }
  
-
   return (
     <BrowserRouter>
     <NavBar>
@@ -29,10 +26,6 @@ function App() {
         <Route path='/' element={
           <div className='content'>
             <h1> Liste de produits</h1>
-            <div className='contCreer'>
-            <Link to='/create' >
-              <button className='btnCreer'>Creer produit</button></Link>
-              </div>
             <div className='productsContainer'>
               {!isEmpty(products) && products.map((product, index) => (
                 <Product  product={product} key={index}></Product>

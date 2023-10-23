@@ -449,15 +449,6 @@
       "basePrice": 22,
       "salePrice": 15,
       "imageUrl": "https://img.freepik.com/free-photo/happy-siblings-with-new-born-baby_23-2148336984.jpg?w=996&t=st=1697706625~exp=1697707225~hmac=d81595e0859a7592c85d01fc1256410f05936c2ff3d19f760f8eae76c48689ce"
-    },
-    {
-      "title": "Camisa",
-      "description": "camisa",
-      "basePrice": 50,
-      "salePrice": 20,
-      "imageUrl": "Creer produit",
-      "categories": "Hommes",
-      "id": 51
     }
   ]
 }
