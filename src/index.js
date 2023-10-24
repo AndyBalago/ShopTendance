@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import {configureStore} from "@reduxjs/toolkit";
 import rootReducer from './reducers';
 import { getProducts } from './actions/product.action';
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -13,6 +14,7 @@ export const store = configureStore ({
   reducer: rootReducer,
   devTools: true,
 })
+
 
 store.dispatch(getProducts());
 

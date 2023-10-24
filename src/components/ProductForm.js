@@ -21,7 +21,7 @@ const ProductForm = () => {
             description: form[1].value,
             basePrice: basePrice,
             salePrice: salePrice,
-            imageUrl: form[6].value,
+            imageUrl: form[5].value,
             categories: form[4].value,
         };
 
