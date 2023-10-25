@@ -288,20 +288,22 @@ figure img {
   justify-content: center;
   gap:.5rem;
   padding-top: 1rem;
- 
 }
 .pagination li{
   list-style: none;
 }
 .pageLink{
   background-color: white;
-  
+  cursor: pointer;
+}
+.pageLink:disabled{
+  cursor:auto;
 }
 .activePage {
   background-color: #000000; 
   color: #fff; 
   border: none;
- 
+  cursor:auto;
 }
 /*       -------------------        Detail produit    ---------------------- */ 
 .contPrincDetail{
@@ -321,7 +323,6 @@ figure img {
   margin-left: 15%;
   height: 70vh;
   border-radius: 1rem;
-  
 }
 .contImgDetail{
 
