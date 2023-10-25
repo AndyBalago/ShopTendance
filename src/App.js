@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import './App.css';
 import { useSelector } from 'react-redux';
 import Product from './components/Product';
@@ -8,10 +8,15 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import FilteredProducts from './components/FilteredProducts';
 import DetailProduct from './components/DetailProduct';
+import Footer from './components/Footer';
+import Pagination from './components/Pagination';
 
 
 function App() {
   const products = useSelector((state) => state.productReducer);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(10);
+
   const Wrapper = ({ children }) => {
     const location = useLocation();
     useLayoutEffect(() => {
@@ -22,9 +27,13 @@ function App() {
 
  if (isEmpty(products)){
   return <div>Loading...</div>
- }else {
-  console.log(products);
  }
+
+ const indexOfLastProduct = currentPage * productsPerPage;
+ const indexOfFirstPage = indexOfLastProduct - productsPerPage;
+ const currentProduct = products.slice(indexOfFirstPage, indexOfLastProduct);
+
+ const paginate = (pageNumber) => setCurrentPage(pageNumber);
  
   return (
     <BrowserRouter>
@@ -36,10 +45,11 @@ function App() {
           <div className='content'>
             <h1> Tous les produits</h1>
             <div className='productsContainer'>
-              {!isEmpty(products) && products.map((product, index) => (
+              {!isEmpty(products) && currentProduct.map((product, index) => (
                 <Product product={product} key={index}></Product>
               ))}
             </div>
+            <Pagination productsPerPage={productsPerPage} totalProducts={products.length} paginate={paginate} currentPage={currentPage} ></Pagination>
           </div>
         }>
         </Route>
@@ -60,6 +70,7 @@ function App() {
         
       </Routes>
       </Wrapper>
+      <Footer></Footer>
     </BrowserRouter>
   );
 }

@@ -19,11 +19,11 @@ function DetailProduct() {
     }
 
     return (
-        <div>DetailProduct
+        <div className='contPrincDetail'>
             <div className='contProductDetail'>
-                <figure>
+                <div className='contImgDetail'>
                     <img className='detailImgProduct' src={product.imageUrl} alt='...'></img>
-                </figure>
+                </div>
                 <div className='productBodyDetail'>
                     <h2 className='detailProductTitle'>{product.title}</h2>
                     <p className='detailDescrProduct'>{product.description}</p>

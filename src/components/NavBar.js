@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
 import LogoST from '../Img/LogoST.png'
 import { NavLink} from 'react-router-dom'
-
 import { useSelector } from 'react-redux'
 import { AiOutlineMenu } from 'react-icons/ai'
 
 
-const NavBar = () => {
+const NavBar = ({}) => {
   const products = useSelector((state) => state.productReducer);
-  
-
   const allCategories = [...new Set(products.map(product => product.categories))];
 
   const [showNavBar, setShowNavBar] = useState(false);
@@ -20,13 +17,12 @@ const NavBar = () => {
     setShowNavBar(false);
   };
 
-
   return (
     <div className='navBar'>
       <div className='contLogo'>
-        <NavLink to='/'>
-          <img src={LogoST} className='logo' />
-        </NavLink>
+        <a href='/'>
+          <img src={LogoST} alt='Logo' className='logo' />
+        </a>
       </div>
       <div className='menuResponsive'>
         <AiOutlineMenu className='menu-icon' onClick={handleShowNavBar}/>

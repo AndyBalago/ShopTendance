@@ -19,6 +19,7 @@ const Product = ({ product }) => {
 
     const handleEdit = (e) => {
         e.preventDefault();
+        
 
         const uubasePrice = parseFloat(uPrixBase);
         const uusalePrice = parseFloat(uPrixSale);
@@ -60,54 +61,76 @@ const Product = ({ product }) => {
                 </div>
             )}
 
-
-            {editToggle ? (
-                <form onSubmit={(e) => handleEdit(e)}>
-                    <div className='inputCont incon1'>
-                        <label htmlFor="titreProduit" className="placeholderEdit">Titre produit</label>
-                        <input className='inputEdit' id='titreProduit' type='text'
-                            defaultValue={product.title}
-                            onChange={(e) => setuTitle(e.target.value)}
-                        ></input>
-                    </div>
-                    <div className='inputCont incon2'>
-                        <label htmlFor="descrip" className="placeholderEdit">Description du produit</label>
-                        <textarea className='inputEdit' id='descrip'
-                            defaultValue={product.description}
-                            onChange={(e) => setuDescr(e.target.value)}
-                        ></textarea>
-                    </div>
-                    <div className='inputCont incon3'>
-                        <label htmlFor="prixBase" className="placeholderEdit">Prix de base</label>
-                        <input className='inputEdit' id='prixBase' type='number'
-                            defaultValue={product.basePrice}
-                            onChange={(e) => setuPrixBase(e.target.value)}
-                        ></input>
-                    </div>
-                    <div className='inputCont incon4'>
-                        <label htmlFor="prixSolde" className="placeholderEdit">Prix solde</label>
-                        <input className='inputEdit' id='prixSolde' type='number'
-                            defaultValue={product.salePrice}
-                            onChange={(e) => setuPrixSale(e.target.value)}
-                        ></input>
-                    </div>
-                    <div className='inputCont incon5'>
-                        <label htmlFor="cate1Produit" className="placeholderEdit">Categorie</label>
-                        <input className='inputEdit' id='cate1Produit' type='text'
-                            defaultValue={product.categories}
-                            onChange={(e) => setuCatego(e.target.value)}
-                        ></input>
-                    </div>
-                    <div className='inputCont incon7'>
-                        <label htmlFor="img" className="placeholderEdit">URL Image du produit</label>
-                        <input className='inputEdit' id='img' type='url'
-                            defaultValue={product.imageUrl}
-                            onChange={(e) => setuImgUrl(e.target.value)}
-                        ></input>
-                    </div>
-                    <input className="validerBtn" id='boutton' type='submit' value="Valider modification" ></input>
-                </form>
-            ) : (
+{editToggle ? (
+    <form onSubmit={(e) => handleEdit(e)}>
+        <div className='inputCont incon1'>
+            <label htmlFor="titreProduit" className="placeholderEdit">Titre produit</label>
+            <input
+                className='inputEdit'
+                id='titreProduit'
+                type='text'
+                defaultValue={product.title}
+                onChange={(e) => setuTitle(e.target.value)}
+                required 
+            ></input>
+        </div>
+        <div className='inputCont incon2'>
+            <label htmlFor="descrip" className="placeholderEdit">Description du produit</label>
+            <textarea
+                className='inputEdit'
+                id='descrip'
+                defaultValue={product.description}
+                onChange={(e) => setuDescr(e.target.value)}
+                required 
+            ></textarea>
+        </div>
+        <div className='inputCont incon3'>
+            <label htmlFor="prixBase" className="placeholderEdit">Prix de base</label>
+            <input
+                className='inputEdit'
+                id='prixBase'
+                type='number'
+                defaultValue={product.basePrice}
+                onChange={(e) => setuPrixBase(e.target.value)}
+                required 
+            ></input>
+        </div>
+        <div className='inputCont incon4'>
+            <label htmlFor="prixSolde" className="placeholderEdit">Prix solde</label>
+            <input
+                className='inputEdit'
+                id='prixSolde'
+                type='number'
+                defaultValue={product.salePrice}
+                onChange={(e) => setuPrixSale(e.target.value)}
+                required 
+            ></input>
+        </div>
+        <div className='inputCont incon5'>
+            <label htmlFor="cate1Produit" className="placeholderEdit">Categorie</label>
+            <input
+                className='inputEdit'
+                id='cate1Produit'
+                type='text'
+                defaultValue={product.categories}
+                onChange={(e) => setuCatego(e.target.value)}
+                required 
+            ></input>
+        </div>
+        <div className='inputCont incon7'>
+            <label htmlFor="img" className="placeholderEdit">URL Image du produit</label>
+            <input
+                className='inputEdit'
+                id='img'
+                type='url'
+                defaultValue={product.imageUrl}
+                onChange={(e) => setuImgUrl(e.target.value)}
+                required 
+            ></input>
+        </div>
+        <input className="validerBtn" id='boutton' type='submit' value="Valider modification" ></input>
+    </form>
+) : (
                 <div className='productCard'>
                     <figure>
                         <Link to={`/DetailProduct/${product.id}`}><img className='imgProduct' src={product.imageUrl} alt='...'></img></Link>
